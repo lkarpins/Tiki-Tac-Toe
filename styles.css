@@ -1,0 +1,48 @@
+/*
+font-family: 'Inika', serif;
+frosted white - rgba(225, 225, 225, .9);
+teal - #0fb9b1;
+*/
+
+* {
+  font-family: 'Inika', serif;
+	color: black;
+}
+
+body {
+  display:flex
+  height: 100vh;
+  background-image: url("assets/istockphoto-183783739-170667a.jpg");
+  background-size: contain;
+  border: 2px solid magenta;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: #0FB9B1;
+  border: 2px solid green;
+}
+
+main {
+  display:flex;
+  height: 100vh;
+  width: auto;
+  border: 2px solid brown;
+
+}
+
+.player1-box, .player2-box {
+  display: flex;
+  flex-direction: column;
+  background: rgba(225, 225, 225, .9);
+  width: 100px;
+  height: 200px;
+  padding: 90px;
+  text-align:center;
+  border: 3px solid chartreuse;
+}
+
+.game-board {
+  display: grid;
+}
