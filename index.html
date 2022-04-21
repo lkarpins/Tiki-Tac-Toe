@@ -4,34 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" type="text/css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inika&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tiki-Tac-Toe</title>
   </head>
   <body>
     <header>
-          <h1>Tiki Tic-Tac-Toe!</h1>
+      <h1 id="header">Tiki-Tac-Toe!</h1>
+      <div class="start-button-box" id="startButtonBox">
+        <button class="start-button" id="startButton" alt="start game">START</button>
+      </div>
     </header>
     <main class="box-wrapper">
       <section class="player1-box">
-        <img src= "assets/pineapple.png" class="pineapple-image" alt="pineapple image">
+        <h2 class="player1-header">Player🥥</h2>
       </section>
-        <div class="game-board">
-          <div class="box">X</div>
-          <div class="box">X</div>
-          <div class="box">X</div>
-          <div class="box">X</div>
-          <div class="box">X</div>
-          <div class="box">X</div>
-          <div class="box">X</div>
-          <div class="box">X</div>
-          <div class="box">X</div>
+        <div class="board" id="board">
+          <div class="box" id="1"></div>
+          <div class="box" id="2"></div>
+          <div class="box" id="3"></div>
+          <div class="box" id="4"></div>
+          <div class="box" id="5"> </div>
+          <div class="box" id="6"></div>
+          <div class="box" id="7"></div>
+          <div class="box" id="8"></div>
+          <div class="box" id="9"></div>
         </div>
       <section class="player2-box">
-        <img src= "assets/coconut.png" class="coconut-image" alt="coconut image">
+        <h2 class="player2-header">Player🍍</h2>
+          <div class="scoreboard" id="player2Scoreboard"></div>
       </section>
     </main>
+    <footer class="footer" id="footer">
+      <button class="reset-button" id="resetButton">Reset Game</button>
+    </footer>
   </body>
   <script src="./player.js"></script>
   <script src="./game.js"></script>
