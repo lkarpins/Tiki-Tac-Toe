@@ -10,39 +10,96 @@ teal - #0fb9b1;
 }
 
 body {
-  display:flex
   height: 100vh;
   background-image: url("assets/istockphoto-183783739-170667a.jpg");
-  background-size: contain;
-  border: 2px solid magenta;
-}
+  background-size: contain;}
 
 header {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  background-color: #0FB9B1;
-  border: 2px solid green;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: turquoise;
+  font-size: 40px;
+  width: 20%;
+  height: 130px;
+  border-radius: 23px;
+}
+
+.start-button {
+  font-size: 23px;
+  border-radius: 23px;
+
+
 }
 
 main {
-  display:flex;
-  height: 100vh;
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  margin-top: 30px;
   width: auto;
-  border: 2px solid brown;
-
 }
 
 .player1-box, .player2-box {
   display: flex;
   flex-direction: column;
+  align-items: center;
   background: rgba(225, 225, 225, .9);
-  width: 100px;
-  height: 200px;
-  padding: 90px;
-  text-align:center;
-  border: 3px solid chartreuse;
+  width: 300px;
+  height: 300px;
 }
 
-.game-board {
+h2 {
+  display: flex;
+  width: 230px;
+  justify-content: center;
+  background: turquoise;
+  font-size: 40px;
+  border-radius: 25px;
+}
+
+
+.board {
+  height: 40vh;
+  width: 400px;
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.box {
+  border-top: 5px solid purple;
+  border-bottom: 5px solid purple;
+  border-right: 5px solid purple;
+  border-left: 5px solid purple;
+  background: rgba(225, 225, 225, .9);
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+  line-height: 85px;
+  font-size: 9vh;
+  font-size-adjust: auto;
+  box-shadow: 0 0 20 px purple;
+  opacity: 75%;
+
+}
+
+footer {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reset-button {
+    font-size: 34px;
+    border-radius: 23px;
+
 }
