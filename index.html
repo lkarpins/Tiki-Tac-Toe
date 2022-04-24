@@ -11,33 +11,33 @@
   <body>
     <header>
       <h1 id="header">Tiki-Tac-Toe!</h1>
-      <div class="start-button-box" id="startButtonBox">
-        <button class="start-button" id="startButton" alt="start game">START</button>
-      </div>
+      <!-- <div class="start-button-box" id="startButtonBox"> -->
+        <!-- <button class="start-button" id="startButton" alt="start game">START</button> -->
+      <!-- </div> -->
     </header>
     <main class="box-wrapper">
       <section class="player1-box">
         <h2 class="player1-header">Player🥥</h2>
+          <div class="scoreboard" id="player1Scoreboard">
+          <span class="player1-score"></span></div>
       </section>
         <div class="board" id="board">
-          <div class="box" id="1"></div>
-          <div class="box" id="2"></div>
-          <div class="box" id="3"></div>
-          <div class="box" id="4"></div>
-          <div class="box" id="5"> </div>
-          <div class="box" id="6"></div>
-          <div class="box" id="7"></div>
-          <div class="box" id="8"></div>
-          <div class="box" id="9"></div>
+          <div class="tile" id="1"></div>
+          <div class="tile" id="2"></div>
+          <div class="tile" id="3"></div>
+          <div class="tile" id="4"></div>
+          <div class="tile" id="5"></div>
+          <div class="tile" id="6"></div>
+          <div class="tile" id="7"></div>
+          <div class="tile" id="8"></div>
+          <div class="tile" id="9"></div>
         </div>
       <section class="player2-box">
         <h2 class="player2-header">Player🍍</h2>
-          <div class="scoreboard" id="player2Scoreboard"></div>
+          <div class="scoreboard" id="player2Scoreboard">
+          <span class="player2-score"></span></div>
       </section>
     </main>
-    <footer class="footer" id="footer">
-      <button class="reset-button" id="resetButton">Reset Game</button>
-    </footer>
   </body>
   <script src="./player.js"></script>
   <script src="./game.js"></script>
