@@ -2,10 +2,9 @@ class Game {
   constructor() {
     this.player1 = new Player('1', '🥥', true);
     this.player2 = new Player('2', '🍍', false);
-    this.player1Tiles = [];
-    this.player2Tiles = [];
     this.winner = null;
     this.draw = false;
+    this.playedTiles = [];
     this.currentPlayer = this.player1;
     this.winningCombos = [
       [1, 4, 7],
@@ -18,20 +17,34 @@ class Game {
       [3, 5, 7]
     ]
   };
+
+
+   checkforWin() {
+    for (var i = 0; i < winningCombos.length; i ++) {
+      if (this.currentPlayer.playedTiles.includes(this.winningCombos[i])) {
+      console.log("hello")
+    }
+}
+}
 };
   // function checkforWin() {
   //   for (var i = 0; i < winningCombos.length; i ++) {
-  //     if (this.currentPlayer.playedTiles.includes(this.winningCombos[i]))
+  //     if (this.currentPlayer.board.includes(this.winningCombos[i]))
   //   }
-    //loop through each array within the winningCombos array and check for same tokens
-    // at winning combo indices
 
 
-  //   function checkforDraw() {
+
+  // function checkforDraw() {
   //
   //   }
 
+  // function resetBoard() {
 
+// }
+
+//   for (var i = 0; i < winningCombos.length; i ++) {
+//     if (this.currentPlayer.board.includes(this.winningCombos[i]))
+//   }
 
 // need a way to track the data for the game board, a way to track
 // which players turn it is, check for win conditions, way to detect
