@@ -9,7 +9,6 @@ class Game {
     this.playedTiles = [];
     this.turnCounter = 0;
     this.currentPlayer = this.player1;
-    this.lastStartingPlayer = this.player1;
     this.winningCombos = [
       ['1', '4', '7'],
       ['2', '5', '8'],
@@ -21,6 +20,7 @@ class Game {
       ['3', '5', '7']
     ]
   }
+  
   determineDraw() {
     if (this.winner === null && this.turnCounter === 9) {
       this.draw = true;
@@ -55,9 +55,5 @@ class Game {
     this.win = false;
     this.draw = false;
     this.winner = null;
-
     }
   };
-
-
-  // function resetBoard() {

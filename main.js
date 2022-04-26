@@ -9,17 +9,14 @@ var player2Scoreboard = document.querySelector('#player2Scoreboard');
 var tiles = document.querySelectorAll('.tile');
 
 // Event Listeners
-boardTile.addEventListener('click', selectBoardTile)
+boardTile.addEventListener('click', selectBoardTile);
 
 // Functions
 function selectBoardTile(event) {
-
   var target = event.target;
-  var tileValue = event.target.id;
-  var isTile = target.classList.contains('tile');
   var isDisabled = target.classList.contains('disabled');
 
-  if (!isDisabled && !game.currentPlayer.playedTiles.includes(tileValue)) {
+  if (!isDisabled && !game.currentPlayer.playedTiles.includes(event.target.id)) {
     game.turnCounter += 1;
     target.innerText = game.currentPlayer.token;
     game.playedTiles.push(event.target.id)
@@ -55,7 +52,6 @@ function updateScore() {
     player2Scoreboard.innerText = `${game.player2.wins}`;
   }
 }
-
 
 function clearBoard() {
   if (game.turnCounter === 9 || game.win === true) {
