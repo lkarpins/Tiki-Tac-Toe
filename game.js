@@ -5,8 +5,11 @@ class Game {
     this.winner = null;
     this.win = false;
     this.draw = false;
+    this.isOver = false;
+    this.playedTiles = [];
     this.turnCounter = 0;
     this.currentPlayer = this.player1;
+    this.lastStartingPlayer = this.player1;
     this.winningCombos = [
       ['1', '4', '7'],
       ['2', '5', '8'],
@@ -19,9 +22,8 @@ class Game {
     ]
   }
   determineDraw() {
-    if (this.turnCounter === 9) {
+    if (this.winner === null && this.turnCounter === 9) {
       this.draw = true;
-      console.log('this is a draw')
     }
   }
 
@@ -38,15 +40,24 @@ class Game {
       if (this.currentPlayer.playedTiles.includes(this.winningCombos[i][0]) && this.currentPlayer.playedTiles.includes(this.winningCombos[i][1]) && this.currentPlayer.playedTiles.includes(this.winningCombos[i][2])) {
         this.winner = this.currentPlayer;
         this.win = true;
-          console.log(`Player ${this.currentPlayer.token} wins! `);
-        // messagePrompter.innerText = `Player ${this.currentPlayer.token} wins! `
-        this.currentPlayer.wins++
-
+        this.isOver = true;
+        this.currentPlayer.increaseWins();
         }
       }
-    };
-};
+    }
 
+  resetGame() {
+    this.playedTiles = [];
+    this.player1.playedTiles = [];
+    this.player2.playedTiles = [];
+    this.turnCounter = 0;
+    this.isOver = false;
+    this.win = false;
+    this.draw = false;
+    this.winner = null;
+
+    }
+  };
 
 
   // function resetBoard() {

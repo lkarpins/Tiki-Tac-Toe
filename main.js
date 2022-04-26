@@ -6,71 +6,64 @@ var boardTile = document.querySelector('#board');
 var messagePrompter = document.querySelector('#messageBox');
 var player1Scoreboard = document.querySelector('#player1Scoreboard');
 var player2Scoreboard = document.querySelector('#player2Scoreboard');
+var tiles = document.querySelectorAll('.tile');
 
 // Event Listeners
 boardTile.addEventListener('click', selectBoardTile)
 
-// function selectBoardTile(event) {
-//   var target = event.target;
-//   var tileValue = event.target.id
-//   var isTile = target.classList.contains('tile');
-//   var isDisabled = target.classList.contains('disabled')
-//
-//     if (isTile && !isDisabled && !game.currentPlayer.playedTiles.includes(tileValue)) {
-//         if (game.currentPlayer === game.player1) {
-//             target.innerText = game.player1.token;
-//             game.currentPlayer.playedTiles.push(tileValue)
-//           } else {
-//             target.innerText = game.player2.token;
-//             game.currentPlayer.playedTiles.push(tileValue)
-//           }
-//             target.classList.add('disabled')
-//             game.turnCounter++;
-//               game.checkForWin();
-//               game.determineDraw()
-//               game.changePlayerTurn();
-//             }
-//         };
-
-
-
+// Functions
 function selectBoardTile(event) {
+
   var target = event.target;
   var tileValue = event.target.id;
   var isTile = target.classList.contains('tile');
   var isDisabled = target.classList.contains('disabled');
 
-  if (isTile && !isDisabled && !game.currentPlayer.playedTiles.includes(tileValue)) {
+  if (!isDisabled && !game.currentPlayer.playedTiles.includes(tileValue)) {
+    game.turnCounter += 1;
     target.innerText = game.currentPlayer.token;
-    game.currentPlayer.playedTiles.push(tileValue);
+    game.playedTiles.push(event.target.id)
+    game.currentPlayer.playedTiles.push(event.target.id);
     target.classList.add('disabled');
-    game.turnCounter++;
     game.checkForWin();
     game.determineDraw();
     game.changePlayerTurn();
     updatePrompter();
+    updateScore();
   }
 };
-        // if (game.draw === false && game.winner === null) {
 
 function updatePrompter() {
   if (game.draw === true) {
-    messagePrompter.innerText = `It's a draw! Try again!`
+    messagePrompter.innerText = `It's a draw! Try again!`;
+    setTimeout(function() {
+      clearBoard();
+    }, 2500);
   } else if (game.win === true) {
-    messagePrompter.innerText = `Player ${game.winner.token} wins! `
+    messagePrompter.innerText = `Player ${game.winner.token} wins! `;
+    setTimeout(function() {
+      clearBoard();
+    }, 2500);
   } else {
     messagePrompter.innerText = `Player ${game.currentPlayer.token}'s turn!`;
   }
 }
-        // resetBoard();
 
-        //updateScore();
+function updateScore() {
+  if (game.win === true) {
+    player1Scoreboard.innerText = `${game.player1.wins}`;
+    player2Scoreboard.innerText = `${game.player2.wins}`;
+  }
+}
 
-//         function resetBoard() {
-//               if (game.turnCounter === 9 || game.winner === true) {
-//               game.playedTiles = [];
-//               target.innerText = '';
-//               target.classList.remove('disabled');
-//             }
-//           }
-// };
+
+function clearBoard() {
+  if (game.turnCounter === 9 || game.win === true) {
+    for (var i = 0; i < tiles.length; i++) {
+      tiles[i].classList.remove('disabled');
+      tiles[i].innerHTML = '';
+    }
+    game.resetGame();
+    updatePrompter();
+  }
+};
