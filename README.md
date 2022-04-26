@@ -2,15 +2,15 @@
 By: [Lidia Karpinski](www.linkedin.com/in/lidia-karpinski)
 
 ## Table of Contents
-* Introduction
-* Set Up
-* Technologies
-* Sources
-* Ideas for Future Feature/Fixes
-* Acknowledgements
+* [Introduction](https://github.com/lkarpins/tic-tac-toe/edit/main/README.md#introduction)
+* [Set Up](https://github.com/lkarpins/tic-tac-toe/edit/main/README.md#set-up)
+* [Technologies](https://github.com/lkarpins/tic-tac-toe/edit/main/README.md#technologies)
+* [Sources](https://github.com/lkarpins/tic-tac-toe/edit/main/README.md#sources)
+* [Ideas for Future Feature/Fixes](https://github.com/lkarpins/tic-tac-toe/edit/main/README.md#ideas-for-future-featuresfixes)
+* [Acknowledgements](https://github.com/lkarpins/tic-tac-toe/edit/main/README.md#acknowledgements)
 
 ## Introduction
-Re-visit an old classic with a tropical spin: Tiki-Tac-Toe! Grab a friend or play on your own! This game records wins/draws and allows timeless play! 
+Re-visit an old classic with a tropical spin: Tiki-Tac-Toe! Place your tokens horizontally, vertically, or diagonally to win! Grab a friend or play on your own! This game records wins/draws and allows timeless play! 
 
 ## Set Up
 1. Fork this repository
