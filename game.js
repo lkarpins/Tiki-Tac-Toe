@@ -20,7 +20,7 @@ class Game {
       ['3', '5', '7']
     ]
   }
-  
+
   determineDraw() {
     if (this.winner === null && this.turnCounter === 9) {
       this.draw = true;
@@ -56,4 +56,4 @@ class Game {
     this.draw = false;
     this.winner = null;
     }
-  };
+  }

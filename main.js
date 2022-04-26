@@ -19,7 +19,7 @@ function selectBoardTile(event) {
   if (!isDisabled && !game.currentPlayer.playedTiles.includes(event.target.id)) {
     game.turnCounter += 1;
     target.innerText = game.currentPlayer.token;
-    game.playedTiles.push(event.target.id)
+    game.playedTiles.push(event.target.id);
     game.currentPlayer.playedTiles.push(event.target.id);
     target.classList.add('disabled');
     game.checkForWin();
@@ -28,7 +28,7 @@ function selectBoardTile(event) {
     updatePrompter();
     updateScore();
   }
-};
+}
 
 function updatePrompter() {
   if (game.draw === true) {
@@ -37,7 +37,7 @@ function updatePrompter() {
       clearBoard();
     }, 2500);
   } else if (game.win === true) {
-    messagePrompter.innerText = `Player ${game.winner.token} wins! `;
+    messagePrompter.innerText = `Player ${game.winner.token} wins!`;
     setTimeout(function() {
       clearBoard();
     }, 2500);
@@ -62,4 +62,4 @@ function clearBoard() {
     game.resetGame();
     updatePrompter();
   }
-};
+}
